@@ -1,10 +1,17 @@
 include <..\config\config.scad>;
-use <bottom.scad>;
+use <bottom.module.scad>;
 
 module lens_rail(lens_r, rail_length) {
 
     outer_r = lens_r + lens_rim; //outer radius
     lower_block_h = axis_h - outer_r;
+
+    if (outer_w / 2 - outer_r > 0)
+        small_lens_low_block();
+    else
+        large_lens_low_block();
+
+    bottom(rail_length, true);
 
     module lens_holder() {
 
@@ -72,12 +79,4 @@ module lens_rail(lens_r, rail_length) {
         }
     }
 
-
-    if (outer_w / 2 - outer_r > 0)
-        small_lens_low_block();
-
-    else
-        large_lens_low_block();
-
-    bottom(rail_length, true);
 }
