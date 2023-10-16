@@ -1,10 +1,11 @@
 include <config\config.scad>;
 use <modules\bottom.module.scad>;
+use <modules\side_rim.module.scad>;
 
 $fn = 50;
 
 led_r = 1.5;
-margin_y = 5;
+margin_y = 8;
 margin_x = 5;
 base_skip_x = 10;
 base_skip_y = 7;
@@ -36,12 +37,23 @@ translate([-plate_w /2, 0, 0])
         difference() {
             cube ([plate_w, plate_h, thickness]);
 
-            translate([(plate_w - (cols - 1) * base_skip_x) / 2 , margin_y + (rows - 1) * base_skip_y, 0])
-                sieve();
+            translate([(plate_w + (cols - 1) * base_skip_x) / 2 , margin_y + (rows - 1) * base_skip_y, 0])
+                mirror([1, 0, 0])
+                    sieve();
         }
     screw_band(screw_band_h, screw_holes);
 }
 bottom(25);
+
+rim_t = 2;
+rim_l = plate_h + screw_band_h;
+rim_h = 2;
+
+translate([plate_w / 2 - rim_t,0,thickness])
+    side_rim(rim_t, rim_l, rim_h);
+
+translate([-plate_w / 2,0,thickness])
+    side_rim(rim_t, rim_l, rim_h);
 
 module sieve() {
     for (y = [0 : rows - 1])
