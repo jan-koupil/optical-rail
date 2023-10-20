@@ -10,8 +10,8 @@ margin_x = 5;
 base_skip_x = 10;
 base_skip_y = 7;
 thickness = 2;
-eps = 0.05;
 screw_holes = true;
+rail_length = 25;
 
 pattern = [
     [1, 1, 1 ],
@@ -43,12 +43,12 @@ translate([-plate_w /2, 0, 0])
         }
     screw_band(screw_band_h, screw_holes);
 }
-bottom(25);
+bottom(rail_length);
 
 rim_t = 1.5;
 rim_l = plate_h + screw_band_h;
 rim_h = 3;
-rim_d = 25 - thickness;
+rim_d = rail_length - thickness;
 
 translate([plate_w / 2 - rim_t,0,thickness])
     side_rim(rim_h, rim_l, rim_d, rim_t);
