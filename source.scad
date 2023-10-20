@@ -48,12 +48,13 @@ bottom(25);
 rim_t = 1.5;
 rim_l = plate_h + screw_band_h;
 rim_h = 3;
+rim_d = 25 - thickness;
 
 translate([plate_w / 2 - rim_t,0,thickness])
-    side_rim(rim_h, rim_l, rim_t);
+    side_rim(rim_h, rim_l, rim_d, rim_t);
 
 translate([-plate_w / 2,0,thickness])
-    side_rim(rim_h, rim_l, rim_t);
+    side_rim(rim_h, rim_l, rim_d, rim_t);
 
 module sieve() {
     for (y = [0 : rows - 1])
