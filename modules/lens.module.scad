@@ -1,5 +1,6 @@
 include <..\config\config.scad>;
 use <bottom.module.scad>;
+use <side_rim.module.scad>;
 
 module lens_rail(lens_r, rail_length) {
 
@@ -44,6 +45,26 @@ module lens_rail(lens_r, rail_length) {
             //echo(str("Variable = ", lower_block_h));
             translate([-outer_w / 2, 0, 0])
                 cube([outer_w, lower_block_h, lens_holder_t]);
+
+            rim_t = 1.5;
+            rim_h = 3;
+            rim_d = rail_length - lens_holder_t;
+
+            echo(str("lens_r = ", lens_r));
+            echo(str("ow2 = ", outer_w / 2 ));
+
+            lens_append = outer_r - sqrt(outer_r ^ 2 - (outer_w / 2) ^ 2);
+            echo(str("lens_append = ", lens_append));
+
+            rim_l = lower_block_h + lens_append;
+
+
+
+            translate([outer_w / 2 - rim_t, 0, lens_holder_t])
+                side_rim(rim_h, rim_l, rim_d, rim_t);
+
+            translate([-outer_w / 2, 0, lens_holder_t])
+                side_rim(rim_h, rim_l, rim_d, rim_t);
     }
 
     module small_lens_low_block() {

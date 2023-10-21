@@ -13,6 +13,9 @@ thickness = 2;
 screw_holes = true;
 rail_length = 25;
 
+rim_t = 1.5;
+rim_h = 3;
+
 pattern = [
     [1, 1, 1 ],
     [1, 0, 0 ],
@@ -49,9 +52,8 @@ module light_source()
     }
     bottom(rail_length);
 
-    rim_t = 1.5;
+
     rim_l = plate_h + screw_band_h;
-    rim_h = 3;
     rim_d = rail_length - thickness;
 
     translate([plate_w / 2 - rim_t,0,thickness])
