@@ -3,12 +3,6 @@ eps = 0.05;
 
 axis_h = 50; //lens axis height above bottom part top level
 
-//lens-ring params
-lens_rim = 3;
-lens_holder_t = 4;
-collar_t = 1; //collar to hold lens vertically  - thickness
-collar_h = 0.5; //                              - height
-
 //light source params
 screw_d = 3; //connecting screw diamater
 screw_w = 30; //screw holes separation
@@ -27,3 +21,7 @@ lock_tooth_w = 2; //lock tooth width (back to rail)
 lock_tooth_h = 1; //lock tooth height (needle thickness)
 
 bottom_platform_h = 1.5;
+
+// bottom-tile connection enforcing rail (rim) params
+rim_t = 1.5;
+rim_h = 3;
