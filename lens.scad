@@ -8,7 +8,7 @@ rail_length = 25;
 
 //lens-ring params
 lens_rim_t = 3; //lens rim thickness
-lens_rim_h = 4; //forms depth of the lens block inside lens ring
+lens_rim_h = 5; //forms depth of the lens block inside lens ring
 lens_holder_t = 2;
 collar_t = 1; //collar to keep lens vertically  - thickness
 collar_d = 0.5; //                              - depth (tooth height)
