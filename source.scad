@@ -13,9 +13,6 @@ thickness = 2;
 screw_holes = true;
 rail_length = 25;
 
-rim_t = 1.5;
-rim_h = 3;
-
 pattern = [
     [1, 1, 1 ],
     [1, 0, 0 ],
@@ -23,6 +20,9 @@ pattern = [
     [1, 0, 0 ],
     [1, 0, 0 ]
 ];
+
+
+/* end of config */
 
 
 light_source();
