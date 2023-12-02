@@ -3,10 +3,6 @@ eps = 0.05;
 
 axis_h = 50; //lens axis height above bottom part top level
 
-//light source params
-screw_d = 3; //connecting screw diamater
-screw_w = 30; //screw holes separation
-screw_bottom_margin = 5; //connecting screw hole from bottom distnace
 
 //rail-holder params
 inner_w = 38; //rail width + play
